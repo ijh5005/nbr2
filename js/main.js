@@ -11,7 +11,7 @@ $(document).ready(() => {
     const position = $('.selectedSong').offset().top;
     const scrollSongTo = position - songIconOffset;
     document.getElementById('playlistSectionHolder').scrollTop = scrollSongTo;
-  }, 1000);
+  });
 });
 
 
