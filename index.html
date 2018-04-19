@@ -18,8 +18,9 @@
 
       <!-- NAVIGATION -->
       <div id="topBar" class="flexRow fullWidth">
+        <img src="./img/logoText.png" alt="" class="h70">
         <div id="logo" class="fullHeight">
-          <img src="./img/logoText.png" alt="" class="h70">
+
         </div>
         <div id="navigation" class="flexRow fullHeight none">
           <p data={{$index}} class="pointer navigationOption" ng-click='navigateTo(navigationOption.name.toLowerCase())' ng-repeat='navigationOption in navigationOptions track by $index'>{{navigationOption.name}}</p>
@@ -37,7 +38,9 @@
               <img class="h90" src="./img/artistFeature/bossLady.png" alt="">
               <p>Telissa K. Lindsey, Owner and CEO</p>
             </div>
-            <p id="mission">"My goal is simple..to make good music with good people"</p>
+            <div class="flexCol fullHeight w60">
+              <p id="mission">"My goal is simple..to make good music with good people"</p>
+            </div>
             <!-- <p>"MY GOAL IS SIMPLE... TO MAKE GOOD MUSIC WITH GOOD PEOPLE"</p> -->
           </div>
           <div id="featuredArtist" class="h50 featuredArtist" style={{featuredArtistStyle}}>
@@ -115,15 +118,18 @@
             <div id="artistImg" data={{$index}} class="slideItems h60 flexRow pointer" ng-repeat='artist in artists track by $index' ng-click='moveSlider($index)'><p ng-if='currentArtistIndex === $index'>{{artist.name}}</p></div>
           </div>
         </div>
-        <div class="slideShowSelectorContainer flexRow fullWidth h10">
-          <div class="slideShowSelector flexRow fullHeight">
-            <div data={{$index}} class="slideSelector flexRow pointer" ng-repeat='artist in artists track by $index' ng-click='moveSlider($index)'>{{artist.sign || artist.name}}</div>
+        <div id="artistBottom" class="flexCol h30 fullWidth">
+          <div class="slideShowSelectorContainer flexRow fullWidth h35">
+            <div class="slideShowSelector flexRow fullHeight">
+              <div data={{$index}} class="slideSelector flexRow pointer" ng-repeat='artist in artists track by $index' ng-click='moveSlider($index)'>{{artist.sign || artist.name}}</div>
+            </div>
+          </div>
+          <div id="artistBioSection" class="flexCol h60 fullWidth">
+            <p id="artistBioSectionName">{{currentArtist.name}}</p>
+            <p id="artistBioP" class="w35">{{currentArtist.bio}}</p>
           </div>
         </div>
-        <div id="artistBioSection" class="flexCol h20 fullWidth">
-          <p id="artistBioSectionName">{{currentArtist.name}}</p>
-          <p id="artistBioP" class="w35">{{currentArtist.bio}}</p>
-        </div>
+
       </div>
 
       <!-- SERVICES PAGE -->
@@ -175,12 +181,14 @@
 
       <!-- STAFF PAGE -->
       <div id="staffPage" class="flexCol webPage fullWidth">
-        <div id="staffPageTitle" class="">
-          <p>NBR Family</p>
-        </div>
-        <div id="staffPageBottom" class="flexRow h75 w80">
+
+        <div id="staffPageBottom" class="flexRow h85 w80">
 
           <div id="staffPageLeftSide" class="fullHeight">
+
+            <div id="staffPageTitle" class="flexRow">
+              <p>NBR Family</p>
+            </div>
 
             <div id="staffPageSection" class=""  ng-click='' ng-repeat='staffMemberObj in staff track by $index'>
               <div id="staffPageSectionName" class="fullWidth">
